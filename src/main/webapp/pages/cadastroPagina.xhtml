@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/layout.xhtml">
+	<ui:define name="pageTitle">Cadastro Página</ui:define>
+
+	<ui:define name="content">
+		<h:head>
+
+		</h:head>
+
+		<h:body>
+			<!-- Cabecalho -->
+			<rich:panel>
+				<h:panelGrid columns="1">
+					<h:panelGrid columns="2">
+						<h:outputText value="Nome:" style="float:left" />
+						<h:inputText value="#{paginaBean.pagina.nome}" required="true"
+							requiredMessage="* Insira o endereço da página." />
+
+						<h:outputText value="Página:" style="float:left" />
+						<h:inputText value="#{paginaBean.pagina.pagina}" required="true"
+							requiredMessage="* Insira o endereço da página." />
+
+					</h:panelGrid>
+				</h:panelGrid>
+				<h:commandButton value="Salvar" style="margin-right:20px;"
+					action="#{paginaBean.salvarUpdate}" />
+
+				<h:commandButton value="Voltar" action="painel.xhtml"
+					immediate="true" />
+			</rich:panel>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>
